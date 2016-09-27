@@ -5,6 +5,21 @@ This is a circle on the proliferation of Android custom view.（这是Android平
 ![](https://github.com/Airsaid/DiffuseView/blob/master/DiffuseView.gif)  
 
 #使用
+XML中：
+```
+<com.airsaid.diffuseview.widget.DiffuseView
+    android:id="@+id/diffuseView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    app:diffuse_color="@color/colorAccent"
+    app:diffuse_coreColor="@color/colorPrimaryDark"
+    app:diffuse_coreImage="@android:drawable/ic_menu_search"
+    app:diffuse_coreRadius="100"
+    app:diffuse_maxWidth="300"
+    app:diffuse_width="4"/>
+```
+代码中：
 ```
 DiffuseView mDiffuseView = (DiffuseView) findViewById(R.id.diffuseView);
 mDiffuseView.start(); // 开始扩散
