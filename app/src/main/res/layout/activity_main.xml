@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.airsaid.diffuseview.MainActivity">
+
+    <com.airsaid.diffuseview.widget.DiffuseView
+        android:id="@+id/diffuseView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:diffuse_color="@color/colorAccent"
+        app:diffuse_coreColor="@color/colorPrimaryDark"
+        app:diffuse_coreImage="@android:drawable/ic_menu_search"
+        app:diffuse_coreRadius="100"
+        app:diffuse_maxWidth="300"
+        app:diffuse_width="4"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="start"
+        android:text="开始扩散"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="stop"
+        android:text="停止扩散"/>
+</LinearLayout>
