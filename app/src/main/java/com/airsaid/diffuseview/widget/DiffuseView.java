@@ -18,7 +18,8 @@ import java.util.List;
  * Created by zhouyou on 2016/9/27.
  * Class desc:
  *
- * 这是一个自定义圆圈扩散View
+ * This is a circle on the proliferation of Android custom view.
+ * GitHub：https://github.com/Airsaid/DiffuseView
  */
 public class DiffuseView extends View {
 
