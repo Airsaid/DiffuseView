@@ -81,6 +81,14 @@ public class DiffuseView extends View {
     }
 
     @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+        if(hasWindowFocus){
+            invalidate();
+        }
+    }
+
+    @Override
     public void onDraw(Canvas canvas) {
         // 绘制扩散圆
         mPaint.setColor(mColor);
