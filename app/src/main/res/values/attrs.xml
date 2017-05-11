@@ -13,6 +13,8 @@
     <attr name="diffuse_width" format="integer"/>
     <!--最大扩散宽度-->
     <attr name="diffuse_maxWidth" format="integer"/>
+    <!--扩散速度，值越大越快-->
+    <attr name="diffuse_speed" format="integer"/>
 
     <declare-styleable name="DiffuseView">
         <attr name="diffuse_color"/>
@@ -21,6 +23,7 @@
         <attr name="diffuse_coreRadius"/>
         <attr name="diffuse_width"/>
         <attr name="diffuse_maxWidth"/>
+        <attr name="diffuse_speed"/>
     </declare-styleable>
 
 </resources>
