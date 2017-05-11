@@ -35,6 +35,8 @@ public class DiffuseView extends View {
     private int mDiffuseWidth = 3;
     /** 最大宽度 */
     private Integer mMaxWidth = 255;
+    /** 扩散速度 */
+    private int mDiffuseSpeed = 5;
     /** 是否正在扩散中 */
     private boolean mIsDiffuse = false;
     // 透明度集合
@@ -61,6 +63,7 @@ public class DiffuseView extends View {
         mCoreRadius = a.getFloat(R.styleable.DiffuseView_diffuse_coreRadius, mCoreRadius);
         mDiffuseWidth = a.getInt(R.styleable.DiffuseView_diffuse_width, mDiffuseWidth);
         mMaxWidth = a.getInt(R.styleable.DiffuseView_diffuse_maxWidth, mMaxWidth);
+        mDiffuseSpeed = a.getInt(R.styleable.DiffuseView_diffuse_speed, mDiffuseSpeed);
         int imageId = a.getResourceId(R.styleable.DiffuseView_diffuse_coreImage, -1);
         if(imageId != -1) mBitmap = BitmapFactory.decodeResource(getResources(), imageId);
         a.recycle();
@@ -92,7 +95,7 @@ public class DiffuseView extends View {
     public void onDraw(Canvas canvas) {
         // 绘制扩散圆
         mPaint.setColor(mColor);
-        for (int i = 0; i < mAlphas.size(); i++) {
+        for (int i = 0; i < mAlphas.size(); i ++) {
             // 设置透明度
             Integer alpha = mAlphas.get(i);
             mPaint.setAlpha(alpha);
@@ -101,12 +104,12 @@ public class DiffuseView extends View {
             canvas.drawCircle(getWidth() / 2, getHeight() / 2, mCoreRadius + width, mPaint);
 
             if(alpha > 0 && width < mMaxWidth){
-                mAlphas.set(i, alpha - 1);
-                mWidths.set(i, width + 1);
+                mAlphas.set(i, alpha - mDiffuseSpeed > 0 ? alpha - mDiffuseSpeed : 1);
+                mWidths.set(i, width + mDiffuseSpeed);
             }
         }
         // 判断当扩散圆扩散到指定宽度时添加新扩散圆
-        if (mWidths.get(mWidths.size() - 1) == mMaxWidth / mDiffuseWidth) {
+        if (mWidths.get(mWidths.size() - 1) >= mMaxWidth / mDiffuseWidth) {
             mAlphas.add(255);
             mWidths.add(0);
         }
@@ -144,6 +147,11 @@ public class DiffuseView extends View {
      */
     public void stop() {
         mIsDiffuse = false;
+        mWidths.clear();
+        mAlphas.clear();
+        mAlphas.add(255);
+        mWidths.add(0);
+        invalidate();
     }
 
     /**
