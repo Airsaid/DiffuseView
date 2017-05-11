@@ -18,6 +18,7 @@
         app:diffuse_coreImage="@android:drawable/ic_menu_search"
         app:diffuse_coreRadius="100"
         app:diffuse_maxWidth="300"
+        app:diffuse_speed="5"
         app:diffuse_width="4"/>
 
     <Button

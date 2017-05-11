@@ -202,4 +202,11 @@ public class DiffuseView extends View {
     public void setMaxWidth(int maxWidth){
         mMaxWidth = maxWidth;
     }
+
+    /**
+     * 设置扩散速度，值越大速度越快
+     */
+    public void setDiffuseSpeed(int speed){
+        mDiffuseSpeed = speed;
+    }
 }

@@ -8,16 +8,17 @@ This is a circle on the proliferation of Android custom view.（这是Android平
 XML中：
 ```
 <com.airsaid.diffuseview.widget.DiffuseView
-    android:id="@+id/diffuseView"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    app:diffuse_color="@color/colorAccent"
-    app:diffuse_coreColor="@color/colorPrimaryDark"
-    app:diffuse_coreImage="@android:drawable/ic_menu_search"
-    app:diffuse_coreRadius="100"
-    app:diffuse_maxWidth="300"
-    app:diffuse_width="4"/>
+        android:id="@+id/diffuseView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:diffuse_color="@color/colorAccent"
+        app:diffuse_coreColor="@color/colorPrimaryDark"
+        app:diffuse_coreImage="@android:drawable/ic_menu_search"
+        app:diffuse_coreRadius="100"
+        app:diffuse_maxWidth="300"
+        app:diffuse_speed="5"
+        app:diffuse_width="4"/>
 ```
 代码中：
 ```
@@ -35,6 +36,7 @@ mDiffuseView.stop();// 停止扩散
 | diffuse_coreRadius| setCoreRadius(int radius)|设置中心圆半径 |
 | diffuse_maxWidth| setMaxWidth(int maxWidth)|设置最大扩散宽度 |
 | diffuse_width| setDiffuseWidth(int width)|设置扩散圆宽度,值越小越宽 |
+| diffuse_speed| setDiffuseSpeed(int speed)|设置扩散速度 |
 
 # 联系我
 [我的博客](http://blog.csdn.net/airsaid "http://blog.csdn.net/airsaid")  
